@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - Aula 02</title>
+</head>
+<body>
+    
+    <div id="app"> 
+        <p>
+            {{ message }}
+        </p>
+        <p v-bind:title="message">
+            {{ name }}
+        </p>
+
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    message: 'Ola mundo!',
+                    name: 'Pedro'
+                }
+            },
+        }).mount('#app')
+    </script>
+
+</body>
+</html>
