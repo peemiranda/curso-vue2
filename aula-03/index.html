@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - Aula 03</title>
+</head>
+<body>
+    
+    <div id="app"> 
+        <p v-if="visibleList">
+            Agora é visivel
+        </p>
+        <ul>
+            <li v-for="item in items" v-bind:key="item.id" :title="item.nome"> {{ item.nome }} </li>
+        </ul>
+        <ol>
+            <li v-if="showOrNot()"> Numero 1</li>
+            <li v-if="showOrNot()"> Numero 2</li>
+            <li v-if="showOrNot()"> Numero 3</li>
+            <li v-if="showOrNot()"> Numero 4</li>
+            <li v-if="showOrNot()"> Numero 5</li>
+            <li v-if="showOrNot()"> Numero 6</li>
+            <li v-if="showOrNot()"> Numero 7</li>
+            <li v-if="showOrNot()"> Numero 8</li>
+            <li v-if="showOrNot()"> Numero 9</li>
+            <li v-if="showOrNot()"> Numero 10</li>
+        </ol>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    visibleList: true,
+                    items: [
+                        {id:1, nome:"Item 1"},
+                        {id:2, nome:"Item 2"},
+                        {id:3, nome:"Item 3"}
+                    ]
+                }
+            },
+            methods: {
+                showOrNot: function() {
+                    return Math.random() >= 0.5
+                }
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+</html>
