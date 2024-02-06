@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - Aula 24 - Filtros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="app">
+        <h1 class="text-center">Filtros</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <p class="lead">{{ 'name' | capitalize }}: {{ pessoa.name | capitalize }}</p>
+                    <p class="lead">{{ 'email' | capitalize }}: {{pessoa.email}}</p>
+                    <p class="lead">{{ 'phone' | capitalize }}: {{pessoa.phone | phoneMaskBr }}</p>
+                    <p class="lead">{{ 'date' | capitalize }}: {{pessoa.date | dateMaskBr}}</p>
+                    <p class="lead">{{ 'balance' | capitalize }}: {{pessoa.balance}}</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@2"></script>
+    
+    <script>
+        
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
