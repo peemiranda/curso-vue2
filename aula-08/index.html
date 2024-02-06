@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - Aula 08 - Sintaxe de templates</title>
+</head>
+<body>
+    <div id="app">
+        <p>
+            Mensagem: {{ message }}
+        </p>
+        <p v-once> Mensagem inalterada: {{message}}</p>
+        <div v-html="rawHtml"></div>
+        <p v-bind-title="message"> {{ message }}</p>
+        <p v-bind-disabled="Math.random() > 0.5"> {{ message }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@2"></script>
+    <script>
+        app = new Vue({
+            el: "#app",
+            data: {
+                message: "ola mundo",
+                rawHtml: '<p style="color: purple">Raw Content </p> '
+            }
+        })
+    </script>
+</body>
+</html>
