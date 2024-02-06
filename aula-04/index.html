@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - Aula 04 </title>
+</head>
+<body>
+    
+    <div id="app"> 
+        <p v-if="isVisible">
+            {{ message }}
+        </p>
+        <br>
+        <button v-on:click="toggle()">
+            Mostrar/Esconder
+        </button>
+        <button v-on:dblclick="reverse()">
+            Inventer
+        </button>
+        <br>
+        <input type="text" name="message" id="message" v-model="message" placeholder="message">
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    isVisible: true,
+                    message: "ola"
+                }
+            },
+            methods: {
+                toggle: function() {
+                    this.isVisible = !this.isVisible;
+                },
+                reverse: function() {
+                    this.message = this.message.split("").reverse().join('')
+                }
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+</html>
