@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - Aula 10 - Dados computados</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ reversed }}</p>
+        <p>{{ getTodays }}</p>
+        <p>{{ fullName }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@2"></script>
+    
+    <script>
+        app = new Vue({
+            el: "#app",
+            data: {
+                text: "true",
+                primeiro_nome: "Pedro",
+                ultimo_nome: "Miranda"
+            },
+            computed: {
+                fullName: function() {
+                    return this.primeiro_nome + " " + this.ultimo_nome
+                },
+                reversed: function () {
+                    return this.text.split('').reverse().join('');
+                },
+                getTodays: function () {
+                    return new Date().toLocaleDateString();
+                }
+            },
+            methods: {
+                reverse: function () {
+                    return this.text.split('').reverse().join('');
+                },
+                getToday: function () {
+                    return new Date().toLocaleDateString();
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
